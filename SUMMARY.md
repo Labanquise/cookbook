@@ -4,7 +4,7 @@
 
 ## 🎨 HTML & CSS
 
-* [Page 1](html-and-css/page-1.md)
+* [Appel des fichiers externes](html-and-css/appel-des-fichiers-externes.md)
 
 ## 📘 Hugo
 
