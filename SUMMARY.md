@@ -4,7 +4,8 @@
 
 ## 🎨 HTML & CSS
 
-* [Appel des fichiers externes](html-and-css/appel-des-fichiers-externes.md)
+* [🌳 Ecologie](html-and-css/ecologie.md)
+* [Accessibilité](html-and-css/accessibilite.md)
 
 ## 📘 Hugo
 
