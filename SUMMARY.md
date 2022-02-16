@@ -5,12 +5,12 @@
 ## 🎨 HTML & CSS
 
 * [🌳 Ecologie](html-and-css/ecologie.md)
-* [Accessibilité](html-and-css/accessibilite.md)
+* [♿ Accessibilité](html-and-css/accessibilite.md)
 
 ## 📘 Hugo
 
-* [Page 2](hugo/page-2.md)
+* [📑 Documentation interne](hugo/documentation-interne.md)
 
 ## ☕ JavaScript
 
-* [Page 3](javascript/page-3.md)
+* [🕹 Astuce](javascript/astuce.md)
