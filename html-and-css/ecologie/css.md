@@ -1,10 +1,8 @@
-# 🌳 Ecologie
+---
+description: Relatif au CSS
+---
 
-## Minifier le code
-
-Que ce soit le code HTML, CSS ou JS, pensez toujours à minifier votre code : cela consiste à enlever tout ce qui est superflu en production (les espaces, les commentaires, raccourcir les noms des variables)
-
-Il existe des outils ou des commandes toute prête selon l'environnement de développement
+# 📘 CSS
 
 ## SASS / SCSS
 
@@ -18,7 +16,7 @@ La balise `<noscript>` permet de mettre un fallback pour les navigateurs les plu
 
 ```html
 <link rel="preload" href="<Chemin de votre style.css>" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="<Chemin de votre style.css>"></noscript>
+<noscript><link rel="stylesheet" href="<Chemin de votre style.css>"></noscript
 ```
 
 ## Critical CSS
@@ -72,4 +70,3 @@ Il existe désormais tout un tas de sélecteur pour différencier les éléments
 * _**"+"**_ : voisin direct
 * _**":first-child"**_ et _**":last-child"**_ : permettant de sélectionner le premier/dernier enfant
 * _**"x:first-of-type"**_ et _**"x:last-of-type"**_ : permettant de sélectionner le premier/dernier élément de type x
-

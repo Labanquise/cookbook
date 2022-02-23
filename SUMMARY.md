@@ -4,7 +4,10 @@
 
 ## 🎨 HTML & CSS
 
-* [🌳 Ecologie](html-and-css/ecologie.md)
+* [🌳 Ecologie](html-and-css/ecologie/README.md)
+  * [📘 CSS](html-and-css/ecologie/css.md)
+  * [📙 HTML](html-and-css/ecologie/html.md)
+  * [🖼 Medias](html-and-css/ecologie/medias.md)
 * [♿ Accessibilité](html-and-css/accessibilite.md)
 
 ## 📘 Hugo
