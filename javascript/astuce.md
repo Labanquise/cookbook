@@ -145,7 +145,7 @@ const { color, colorHex } = score >= 75 ? {color: 'green', colorHex: '#1CAF9C'} 
 Objet prévu pour la construction d'url pour GET
 
 {% embed url="https://developer.mozilla.org/fr/docs/Web/API/URLSearchParams" %}
-Documentation Officielle
+Documentation officielle
 {% endembed %}
 
 ## Syntaxe de décomposition
@@ -159,3 +159,62 @@ const metadata = {...enterprise, ...optin};
 {% embed url="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Spread_syntax" %}
 Documentation officielle
 {% endembed %}
+
+## Valeur d'un radio button
+
+Pour récupérer facilement la valeur du bouton actuellement coché, on utilise le nom du set de bouton avec la pseudo-class ":checked"
+
+```javascript
+document.querySelector('input[name="optEmailOrder"]:checked').value
+```
+
+## Object reference
+
+En utilisant un "=" pour assigner une variable à un objet, l'objet n'est pas copié en tant que tel, c'est une référence qui est créée.
+
+## Trier un tableau JSON par valeurs
+
+```javascript
+data.sort((a, b) => (a.Weight > b.Weight) ? 1 : (a.Weight === b.Weight) ? ((a.Name > b.Name) ? 1 : -1) : -1 );
+```
+
+## Multiple await de façon séquentielle
+
+Il peut arriver de vouloir attendre plusieurs retours de promesses, avant d'exécuter une autre action.
+
+On ne peut pas utiliser un foreach. Dans l'exemple ci-dessous printFiles() s'exécutera mais l'ensemble des call se fera simultanément. On ne peut pas prédire leur ordre de retour.
+
+```javascript
+async function printFiles () {
+  const files = await getFilePaths() // Assume this works fine
+
+  files.forEach(async (file) => {
+    const contents = await fs.readFile(file, 'utf8')
+    console.log(contents)
+  })
+}
+
+printFiles()
+```
+
+Il faut passer par un for...of
+
+```javascript
+async function printFiles () {
+  const files = await getFilePaths();
+
+  for (const file of files) {
+    const contents = await fs.readFile(file, 'utf8');
+    console.log(contents);
+  }
+}
+
+printFiles()
+```
+
+Ce qui permet de garder l'ordre séquentiel
+
+**En savoir +** :&#x20;
+
+* [https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
+* [https://thecodebarbarian.com/for-vs-for-each-vs-for-in-vs-for-of-in-javascript](https://thecodebarbarian.com/for-vs-for-each-vs-for-in-vs-for-of-in-javascript)
