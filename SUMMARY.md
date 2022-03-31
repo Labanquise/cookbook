@@ -13,6 +13,7 @@
 ## 📘 Hugo
 
 * [📑 Documentation interne](hugo/documentation-interne.md)
+* [🥐 Onboarding Front](hugo/onboarding-front.md)
 
 ## ☕ JavaScript
 
