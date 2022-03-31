@@ -30,3 +30,36 @@ Concernant les layouts du template, selon les informations renseignées :&#x20;
 
 
 
+## Passer des paramètres à un fichier JS
+
+Etape souvent délicate, le moteur **HUGO** permet d'ajouter facilement dans le **HTML**, mais pas directement dans les assets (comme un **fichier JS**)
+
+Il est possible de passer des données au fichier JS grâce à la commande js.Build et les récupérer après en JS.
+
+### Dans le layout :&#x20;
+
+```html
+{{ $tools := resources.Get "/js/tools.js" | resources.Minify | js.Build (dict "params" (dict "config" ($data.Get "config") "companies" ($data.Get "companies" | jsonify)) "format" "esm")}}
+<script src="{{ $tools.Permalink }}" type='module' async></script>
+```
+
+**js.Build** va prendre en paramètre un dictionnaire (paire clé/valeur) :&#x20;
+
+* **"params"** : les valeurs que vous souhaitez transférer au script js (peut être sous la forme d'un dict)
+* **"format"** : valeur utilisé pour le build, je recommande "ESM"
+
+### Dans le script JS :&#x20;
+
+```javascript
+import * as params from '@params';
+let config = JSON.parse(params.config);
+let companies = JSON.parse(params.companies);
+```
+
+### Point d'attention
+
+**js.Build** parse l'intégralité du fichier, si une fonction ou variable n'est pas appelée, **js.Build** l'efface du résultat final.
+
+Attention aussi à l'effet de cascade (une première fonction n'est pas appelée, les fonctions appelées uniquement à l'intérieure deviennent à leur tour "inutiles")
+
+Une fonction appelée dans le code HTML sera donc effacée.
